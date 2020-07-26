@@ -1,0 +1,23 @@
+﻿@using PrincessGame.General.Helpers
+@using PrincessGame.General.Resources
+
+@{
+    ViewData["Title"] = "Home Page";
+    var gameData = AppResources.GameData;
+    var gamePlayer = AppResources.GameData.Player;
+}
+
+<div class="text-center">
+    <p>@GameFieldHelper.RenderField(Html, gameData.GameField)</p>
+</div>
+<div class="text-right">
+    <p>Количество жизней: @gamePlayer.HealthPoints</p>
+</div>
+
+<form method="post">
+    <input type="submit" value="MoveUp" name="actionType" />
+    <input type="submit" value="MoveRight" name="actionType" />
+    <input type="submit" value="MoveDown" name="actionType" />
+    <input type="submit" value="MoveLeft" name="actionType" />
+    
+</form>
